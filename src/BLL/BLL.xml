@@ -1,0 +1,551 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BLL</name>
+    </assembly>
+    <members>
+        <member name="T:BLL.Interfaces.IBankAccountService">
+            <summary>
+            The Bank Account Service interface
+            Contains methods to CreateAccount, DeleteAccount, ShareAccount,
+            GetAllUserTransaction, GetUserAccounts, GetAccountScore
+            </summary>
+        </member>
+        <member name="P:BLL.Interfaces.IBankAccountService.CurrentUser">
+            <summary>
+            Gets or sets bank account service current user
+            </summary>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAccountScore(DAL.Domain.BankAccount)">
+            <summary>
+            method of IBankAccountService interface
+            </summary>
+            <param name="account">The Bank account</param>
+            <returns>account score</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactions">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <returns>all user transaction</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactionsFrom(DAL.Domain.BankAccount)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="fromAccount">user transaction from this account</param>
+            <returns>user transaction from account</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactionsTo(DAL.Domain.BankAccount)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="toAccount">The bank account that get user transaction</param>
+            <returns>user transaction to account</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactions(System.DateTime,System.DateTime)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="dateFrom">transaction from date</param>
+            <param name="dateTo">transaction to date</param>
+            <returns>user transaction from dateFrom to dateTo</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactionsFrom(DAL.Domain.BankAccount,System.DateTime,System.DateTime)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="fromAccount">user transaction from this account</param>
+            <param name="dateFrom">user transaction from date</param>
+            <param name="dateTo">user transaction to date</param>
+            <returns>user transaction account from dateFrom to dateTo </returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserTransactionsTo(DAL.Domain.BankAccount,System.DateTime,System.DateTime)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="toAccount">The bank account that get user transaction</param>
+            <param name="dateFrom">user transaction from date</param>
+            <param name="dateTo">user transaction to date</param>
+            <returns>user transaction to account from dateFrom to dateTo</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.GetAllUserAccounts">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <returns>user accounts</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.MakeTransaction(DAL.Domain.BankAccount,DAL.Domain.BankAccount,System.Decimal,System.DateTime,System.String)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="from">The Bank account that send transaction</param>
+            <param name="to">The bank account that get transaction</param>
+            <param name="amount">amount of money</param>
+            <param name="date">Date creation of transaction</param>
+            <param name="description">description to transaction</param>
+            <returns> transaction if done </returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.ShareAccount(DAL.Domain.BankAccount,System.String)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="account">The bank account to share</param>
+            <param name="email">Email to share account</param>
+            <returns>if account shared</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.CreateAccount(DAL.Enums.AccountType,System.String,DAL.Domain.Currency)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="type">Select account type</param>
+            <param name="name">name of account</param>
+            <param name="currency">select currency</param>
+            <returns>created account</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IBankAccountService.DeleteAccount(DAL.Domain.BankAccount)">
+            <summary>
+            method of IBankAccountService
+            </summary>
+            <param name="account">The bank account to delete</param>
+            <returns>if account deleted</returns>
+        </member>
+        <member name="T:BLL.Interfaces.ICurrencyService">
+            <summary>
+            The Currency Service interface
+            Contains method GetRate, GetRatByDate and UpdateCurrency
+            </summary>
+        </member>
+        <member name="M:BLL.Interfaces.ICurrencyService.UpdateCurrency">
+            <summary>
+            method of ICurrencyService
+            Update Currency
+            </summary>
+        </member>
+        <member name="M:BLL.Interfaces.ICurrencyService.GetRate(System.String)">
+            <summary>
+            method of ICurrencyService
+            </summary>
+            <param name="code">Code of currency</param>
+            <returns>currency rate</returns>
+        </member>
+        <member name="M:BLL.Interfaces.ICurrencyService.GetRateByDate(System.String,System.DateTime)">
+            <summary>
+            method of ICurrencyService
+            </summary>
+            <param name="code">Code of currency</param>
+            <param name="date">Wanted date</param>
+            <returns>Currency rate on the date</returns>
+        </member>
+        <member name="T:BLL.Interfaces.IStatisticsService">
+            <summary>
+            Statistics Service interface
+            Contains method to GetExpenceStatistic, getIncomeStatistic
+            GetExpenseStatisticFullPerion, getIncomeStatisticFullPeriod
+            </summary>
+        </member>
+        <member name="P:BLL.Interfaces.IStatisticsService.CurrentUser">
+            <summary>
+            Gets or sets statistics service current user
+            </summary>
+        </member>
+        <member name="M:BLL.Interfaces.IStatisticsService.GetExpenceStatistics(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            method of IStatisticService
+            </summary>
+            <param name="fromDate">expenses statistic from date</param>
+            <param name="toDate">expenses statistic to date</param>
+            <param name="currency">currency</param>
+            <returns>statistic from fromDate to toDate</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IStatisticsService.GetIncomeStatistics(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            method of IStatisticService
+            </summary>
+            <param name="fromDate">income statistic from date</param>
+            <param name="toDate">income statistic to date</param>
+            <param name="currency">currency</param>
+            <returns>income statistic from fromDate to toDate</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IStatisticsService.GetExpenceStatisticsFullPeriod(System.String)">
+            <summary>
+            method of IStatisticService
+            </summary>
+            <returns>expenses statistic for the whole period</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IStatisticsService.GetIncomeStatisticsFullPeriod(System.String)">
+            <summary>
+            method of IStatisticService
+            </summary>
+            <returns>income statistic for the whole period</returns>
+        </member>
+        <member name="T:BLL.Interfaces.IUserService">
+            <summary>
+            User service interface
+            Contains method to Login, SignUp, ChangePassword,
+            ChangeMail, ChangePhoneNumber, isValidMail
+            </summary>
+        </member>
+        <member name="P:BLL.Interfaces.IUserService.CurrentUser">
+            <summary>
+            Gets user service current user
+            </summary>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.Login(System.String,System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="email">user email</param>
+            <param name="password">user password</param>
+            <returns>logged-in user</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.SignUp(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="firstName">user name</param>
+            <param name="lastName">user last name</param>
+            <param name="email">user email</param>
+            <param name="phoneNumber">user phone number</param>
+            <param name="password">user password</param>
+            <returns>registered user</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.ChangePassword(System.String,System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="oldPassword">password to change</param>
+            <param name="newPassword">new password</param>
+            <returns>if password changed</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.ChangeMail(System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="newMail">new email</param>
+            <returns>if email changed</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.ChangePhoneNumber(System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="number">new phone number</param>
+            <returns>if phone number changed</returns>
+        </member>
+        <member name="M:BLL.Interfaces.IUserService.IsValidMail(System.String)">
+            <summary>
+            method of IUserService
+            </summary>
+            <param name="email">select email</param>
+            <returns>if email valid</returns>
+        </member>
+        <member name="T:BLL.Models.StatisticsItem">
+            <summary>
+            Statistic Item class
+            Contains field of dateTime and value
+            </summary>
+        </member>
+        <member name="P:BLL.Models.StatisticsItem.Date">
+            <summary>
+            Statistic item date
+            </summary>
+        </member>
+        <member name="P:BLL.Models.StatisticsItem.Value">
+            <summary>
+            Statistic item value
+            </summary>
+        </member>
+        <member name="T:BLL.Services.BankAccountService">
+            <summary>
+            The Bank Account Service class
+            Implement IBankAccountService interface
+            </summary>
+        </member>
+        <member name="F:BLL.Services.BankAccountService.unitOfWork">
+            <summary>
+            Contains an object of IUnitOfWork
+            </summary>
+        </member>
+        <member name="F:BLL.Services.BankAccountService.currencyService">
+            <summary>
+            Contains an object of ICurrencyService
+            </summary>
+        </member>
+        <member name="P:BLL.Services.BankAccountService.CurrentUser">
+            <summary>
+            Gets or sets bank account service current user
+            </summary>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.#ctor(DAL.Interfaces.IUnitOfWork,BLL.Interfaces.ICurrencyService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BLL.Services.BankAccountService"/> class.
+            </summary>
+            <param name="unitOfWork">unit of work</param>
+            <param name="currencyService">currency service</param>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAccountScore(DAL.Domain.BankAccount)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="account">The Bank account</param>
+            <returns>account score</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactions">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <returns>all user transaction</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactionsFrom(DAL.Domain.BankAccount)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="fromAccount">user transaction from this account</param>
+            <returns>user transaction from account</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactionsTo(DAL.Domain.BankAccount)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="toAccount">The bank account that get user transaction</param>
+            <returns>user transaction to account</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactions(System.DateTime,System.DateTime)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="dateFrom">transaction from date</param>
+            <param name="dateTo">transaction to date</param>
+            <returns>user transaction from dateFrom to dateTo</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactionsFrom(DAL.Domain.BankAccount,System.DateTime,System.DateTime)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="fromAccount">user transaction from this account</param>
+            <param name="dateFrom">user transaction from date</param>
+            <param name="dateTo">user transaction to date</param>
+            <returns>user transaction account from dateFrom to dateTo </returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserTransactionsTo(DAL.Domain.BankAccount,System.DateTime,System.DateTime)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="toAccount">The bank account that get user transaction</param>
+            <param name="dateFrom">user transaction from date</param>
+            <param name="dateTo">user transaction to date</param>
+            <returns>user transaction to account from dateFrom to dateTo</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.GetAllUserAccounts">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <returns>user accounts</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.MakeTransaction(DAL.Domain.BankAccount,DAL.Domain.BankAccount,System.Decimal,System.DateTime,System.String)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="from">The Bank account that send transaction</param>
+            <param name="to">The bank account that get transaction</param>
+            <param name="amount">amount of money</param>
+            <param name="date">Date creation of transaction</param>
+            <param name="description">description to transaction</param>
+            <returns> transaction if done </returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.ShareAccount(DAL.Domain.BankAccount,System.String)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="account">The bank account to share</param>
+            <param name="email">Email to share account</param>
+            <returns>if account shared</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.CreateAccount(DAL.Enums.AccountType,System.String,DAL.Domain.Currency)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="type">Select account type</param>
+            <param name="name">name of account</param>
+            <param name="currency">select currency</param>
+            <returns>created account</returns>
+        </member>
+        <member name="M:BLL.Services.BankAccountService.DeleteAccount(DAL.Domain.BankAccount)">
+            <summary>
+            Implementation of IBankAccountService
+            </summary>
+            <param name="account">The bank account to delete</param>
+            <returns>if account deleted</returns>
+        </member>
+        <member name="T:BLL.Services.CurrencyService">
+            <summary>
+            The Currency Service class
+            Implement ICurrencyService interface
+            </summary>
+        </member>
+        <member name="F:BLL.Services.CurrencyService.xml">
+            <summary>
+            Contains xml document with currencies
+            </summary>
+        </member>
+        <member name="M:BLL.Services.CurrencyService.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BLL.Services.CurrencyService"/> class.
+            </summary>
+        </member>
+        <member name="M:BLL.Services.CurrencyService.GetRate(System.String)">
+            <summary>
+            Implementation of ICurrencyService
+            </summary>
+            <param name="code">Code of currency</param>
+            <returns>currency rate</returns>
+        </member>
+        <member name="M:BLL.Services.CurrencyService.GetRateByDate(System.String,System.DateTime)">
+            <summary>
+            Implementation of ICurrencyService
+            </summary>
+            <param name="code">Code of currency</param>
+            <param name="date">Wanted date</param>
+            <returns>Currency rate on the date</returns>
+        </member>
+        <member name="M:BLL.Services.CurrencyService.UpdateCurrency">
+            <summary>
+            Implementation of ICurrencyService
+            Update Currency
+            </summary>
+        </member>
+        <member name="T:BLL.Services.StatisticsService">
+            <summary>
+            Statistics Service class
+            Implement IStatisticService interface
+            </summary>
+        </member>
+        <member name="F:BLL.Services.StatisticsService.unitOfWork">
+            <summary>
+            Contains an object of IUnitOfWork
+            </summary>
+        </member>
+        <member name="P:BLL.Services.StatisticsService.CurrentUser">
+            <summary>
+            Gets or sets statistics service current user
+            </summary>
+        </member>
+        <member name="F:BLL.Services.StatisticsService.currencyService">
+            <summary>
+            Contains an object of ICurrencyService
+            </summary>
+        </member>
+        <member name="M:BLL.Services.StatisticsService.#ctor(DAL.Interfaces.IUnitOfWork,BLL.Interfaces.ICurrencyService)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BLL.Services.StatisticsService"/> class.
+            </summary>
+            <param name="unitOfWork">unit of work</param>
+            <param name="currencyService">currence service</param>
+        </member>
+        <member name="M:BLL.Services.StatisticsService.GetExpenceStatistics(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Implementation of IStatisticService
+            </summary>
+            <param name="fromDate">expenses statistic from date</param>
+            <param name="toDate">expenses statistic to date</param>
+            <param name="currency">currency</param>
+            <returns>statistic from fromDate to toDate</returns>
+        </member>
+        <member name="M:BLL.Services.StatisticsService.GetIncomeStatistics(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            Implementation of IStatisticService
+            </summary>
+            <param name="fromDate">income statistic from date</param>
+            <param name="toDate">income statistic to date</param>
+            <param name="currency">currency</param>
+            <returns>income statistic from fromDate to toDate</returns>
+        </member>
+        <member name="M:BLL.Services.StatisticsService.GetExpenceStatisticsFullPeriod(System.String)">
+            <summary>
+            Implementation of IStatisticService
+            </summary>
+            <returns>expenses statistic for the whole period</returns>
+        </member>
+        <member name="M:BLL.Services.StatisticsService.GetIncomeStatisticsFullPeriod(System.String)">
+            <summary>
+            Implementation of IStatisticService
+            </summary>
+            <returns>income statistic for the whole period</returns>
+        </member>
+        <member name="T:BLL.Services.UserService">
+            <summary>
+            User Service class
+            Implement IUserService
+            </summary>
+        </member>
+        <member name="F:BLL.Services.UserService.phoneRegex">
+            <summary>
+            Contains regex to validate phone number
+            </summary>
+        </member>
+        <member name="P:BLL.Services.UserService.CurrentUser">
+            <summary>
+            Gets user service current user
+            </summary>
+        </member>
+        <member name="F:BLL.Services.UserService.unitOfWork">
+            <summary>
+            Contains an object of IUnitOfWork
+            </summary>
+        </member>
+        <member name="M:BLL.Services.UserService.IsValidMail(System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="email">select email</param>
+            <returns>if email is valid</returns>
+        </member>
+        <member name="M:BLL.Services.UserService.#ctor(DAL.Interfaces.IUnitOfWork)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BLL.Services.UserService"/> class.
+            </summary>
+            <param name="unitOfWork">unit of work</param>
+        </member>
+        <member name="M:BLL.Services.UserService.ChangeMail(System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="newMail">new email</param>
+            <returns>if email changed</returns>
+        </member>
+        <member name="M:BLL.Services.UserService.ChangePassword(System.String,System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="oldPassword">password to change</param>
+            <param name="newPassword">new password</param>
+            <returns>if password changed</returns>
+        </member>
+        <member name="M:BLL.Services.UserService.ChangePhoneNumber(System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="number">new phone number</param>
+            <returns>if phone number changed</returns>
+        </member>
+        <member name="M:BLL.Services.UserService.Login(System.String,System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="email">user email</param>
+            <param name="password">user password</param>
+            <returns>logged-in user</returns>
+        </member>
+        <member name="M:BLL.Services.UserService.SignUp(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Implementation of IUserService
+            </summary>
+            <param name="firstName">user name</param>
+            <param name="lastName">user last name</param>
+            <param name="email">user email</param>
+            <param name="phoneNumber">user phone number</param>
+            <param name="password">user password</param>
+            <returns> registered user</returns>
+        </member>
+    </members>
+</doc>

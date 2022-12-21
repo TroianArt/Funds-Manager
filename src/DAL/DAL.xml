@@ -1,0 +1,449 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DAL</name>
+    </assembly>
+    <members>
+        <member name="T:DAL.Context.FundsContext">
+            <summary>
+            Fund Context class
+            Contains fields Users, BankAccounts, Currency, Transaction and
+            </summary>
+        </member>
+        <member name="P:DAL.Context.FundsContext.Users">
+            <summary>
+            Gets or sets funds Context set of Users
+            </summary>
+        </member>
+        <member name="P:DAL.Context.FundsContext.BankAccounts">
+            <summary>
+            Gets or sets funds Context set of Bank accounts
+            </summary>
+        </member>
+        <member name="P:DAL.Context.FundsContext.Currency">
+            <summary>
+            Gets or sets funds Context set of Currency
+            </summary>
+        </member>
+        <member name="P:DAL.Context.FundsContext.Transactions">
+            <summary>
+            Gets or sets funds Context set of transactions
+            </summary>
+        </member>
+        <member name="M:DAL.Context.FundsContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DAL.Context.FundsContext"/> class.
+            </summary>
+        </member>
+        <member name="M:DAL.Context.FundsContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{DAL.Context.FundsContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:DAL.Context.FundsContext"/> class.
+            </summary>
+            <param name="options">DbContext options</param>
+        </member>
+        <member name="M:DAL.Context.FundsContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Set table relationships
+            </summary>
+            <param name="modelBuilder">model builder</param>
+        </member>
+        <member name="T:DAL.Domain.BankAccount">
+            <summary>
+            Bank Account class
+            Contains fields name, account type, currency type, currency id, list of users
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BankAccount.Name">
+            <summary>
+            Gets or sets bank account name
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BankAccount.Type">
+            <summary>
+            Gets or sets bank account type 
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BankAccount.CurrencyTypeId">
+            <summary>
+            Gets or sets bank account type id
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BankAccount.CurrencyType">
+            <summary>
+            Gets or sets bank account currency type 
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BankAccount.Users">
+            <summary>
+            Gets or sets bank account list of Users
+            </summary>
+        </member>
+        <member name="T:DAL.Domain.BaseEntity">
+            <summary>
+            Base Entity class
+            Contains field Id
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.BaseEntity.Id">
+            <summary>
+            Gets or sets base Entity id
+            </summary>
+        </member>
+        <member name="T:DAL.Domain.Currency">
+            <summary>
+            Currency class
+            Contains field currency code
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Currency.Code">
+            <summary>
+            Gets or sets currency code 
+            </summary>
+        </member>
+        <member name="T:DAL.Domain.Transaction">
+            <summary>
+            Transaction class
+            contains fields Bank account, amount, transaction date, description, user id, user
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.BankAccountFrom">
+            <summary>
+            Gets or sets bank account from Transaction
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.BankAccountTo">
+            <summary>
+            Gets or sets bank account to Transaction
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.AmountTo">
+            <summary>
+            Gets or sets amount to Transaction
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.AmountFrom">
+            <summary>
+            Gets or sets amount From Transaction
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.TransactionDate">
+            <summary>
+            Gets or sets transaction Date
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.Description">
+            <summary>
+            Gets or sets transaction Description
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.UserId">
+            <summary>
+            Gets or sets transaction UserId
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.Transaction.User">
+            <summary>
+            Gets or sets transaction User
+            </summary>
+        </member>
+        <member name="T:DAL.Domain.User">
+            <summary>
+            User class
+            Contains fields of user mail, user password, user name, user surname
+            user phone
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.Mail">
+            <summary>
+            Gets or sets user mail
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.Password">
+            <summary>
+            Gets or sets user password
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.BankAccounts">
+            <summary>
+            Gets or sets user list of bank accounts
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.Name">
+            <summary>
+            Gets or sets user name
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.Surname">
+            <summary>
+            Gets or sets user surname
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.User.Phone">
+            <summary>
+            Gets or sets user phone
+            </summary>
+        </member>
+        <member name="T:DAL.Domain.UserBankAccount">
+            <summary>
+            User Bank Account class
+            Contains fields user Id, user, bank account Id, bank account
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.UserBankAccount.UserId">
+            <summary>
+            Gets or sets user bank account user id
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.UserBankAccount.User">
+            <summary>
+            Gets or sets user bank account user
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.UserBankAccount.BankAccountId">
+            <summary>
+            Gets or sets user bank account bank account id
+            </summary>
+        </member>
+        <member name="P:DAL.Domain.UserBankAccount.BankAccount">
+            <summary>
+            Gets or sets user bank account bank account
+            </summary>
+        </member>
+        <member name="T:DAL.Enums.AccountType">
+            <summary>
+            Account Type Enumeration
+            Contains enums Income, Expence, Current
+            </summary>
+        </member>
+        <member name="F:DAL.Enums.AccountType.Income">
+            <summary>
+            Income bank account type
+            </summary>
+        </member>
+        <member name="F:DAL.Enums.AccountType.Expence">
+            <summary>
+            Expence bank account type
+            </summary>
+        </member>
+        <member name="F:DAL.Enums.AccountType.Current">
+            <summary>
+            current bank account type
+            </summary>
+        </member>
+        <member name="T:DAL.Interfaces.IRepository`1">
+            <summary>
+            Repository interface
+            Contains methods Get, Delete, Update, Add async, Save, Save async
+            </summary>
+            <typeparam name="T"> entity typeparam</typeparam>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Get">
+            <summary>
+            method of IRepository
+            </summary>
+            <returns>list of entities</returns>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Get(System.Func{`0,System.Boolean})">
+            <summary>
+            method of IRepository
+            </summary>
+            <param name="predicate">predicate</param>
+            <returns>list of entities by predicate</returns>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Get(System.Int32)">
+            /// <summary>
+            method of IRepository
+            </summary>
+            <param name="id">Id</param>
+            <returns>entity by id</returns>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Delete(`0)">
+            <summary>
+            method of IRepository
+            delete entity
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Delete(System.Int32)">
+            <summary>
+            method of IRepository
+            delete entity by id
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Update(`0)">
+            <summary>
+            method of IRepository
+            update entity 
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.AddAsync(`0)">
+            <summary>
+            method of IRepository
+            </summary>
+            <param name="entity">entity</param>
+            <returns>add task</returns>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.Save">
+            <summary>
+            method of IRepository
+            Save changes
+            </summary>
+        </member>
+        <member name="M:DAL.Interfaces.IRepository`1.SaveAsync">
+            <summary>
+            method of IRepository
+            </summary>
+            <returns>saved changes</returns>
+        </member>
+        <member name="T:DAL.Interfaces.IUnitOfWork">
+            <summary>
+            Unit of Work interface
+            Contains methods Save, Save async, Repository
+            </summary>
+        </member>
+        <member name="M:DAL.Interfaces.IUnitOfWork.Repository``1">
+            <summary>
+            Implementation of IUnitOfWork
+            </summary>
+            <typeparam name="T">typeparam of repository</typeparam>
+            <returns>repository by type</returns>
+        </member>
+        <member name="M:DAL.Interfaces.IUnitOfWork.Save">
+            <summary>
+            Save changes
+            </summary>
+        </member>
+        <member name="M:DAL.Interfaces.IUnitOfWork.SaveAsync">
+            <summary>
+            Save changes
+            </summary>
+            <returns>saved changes</returns>
+        </member>
+        <member name="T:DAL.Repositories.Repository`1">
+            <summary>
+            Repository class
+            Implement IRepository
+            </summary>
+            <typeparam name="T">entity typeparam</typeparam>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DAL.Repositories.Repository`1"/> class.
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.#ctor(DAL.Context.FundsContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DAL.Repositories.Repository`1"/> class.
+            </summary>
+            <param name="context">context</param>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Get">
+            <summary>
+            Implementation of IRepository
+            </summary>
+            <returns>list of entities</returns>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Get(System.Int32)">
+            <summary>
+            Implementation of IRepository
+            </summary>
+            <param name="id">Id</param>
+            <returns>entity by id</returns>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Get(System.Func{`0,System.Boolean})">
+            <summary>
+            Implementation of IRepository
+            </summary>
+            <param name="predicate">predicate</param>
+            <returns>list of entities by predicate</returns>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Delete(`0)">
+            <summary>
+            Implementation of IRepository
+            delete entity
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Delete(System.Int32)">
+            <summary>
+            Implementation of IRepository
+            delete entity by id
+            </summary>
+            <param name="id">id</param>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Update(`0)">
+            <summary>
+            Implementation of IRepository
+            update entity 
+            </summary>
+            <param name="entity">entity</param>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.AddAsync(`0)">
+            <summary>
+            Implementation of IRepository
+            </summary>
+            <param name="entity">entity</param>
+            <returns>add task</returns>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.Save">
+            <summary>
+            Implementation of IRepository
+            Save changes
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.Repository`1.SaveAsync">
+            <summary>
+            Implementation of IRepository
+            </summary>
+            <returns>saved changes</returns>
+        </member>
+        <member name="T:DAL.Repositories.UnitOfWork">
+            <summary>
+            Unit of work class
+            Implement IUnitOfWork intreface
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.#ctor">
+            <summary>
+            Constructor by default
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.#ctor(DAL.Context.FundsContext)">
+            <summary>
+            Constructor with paramethr
+            </summary>
+            <param name="context">context</param>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.Repository``1">
+            <summary>
+            Implementation of IUnitOfWork
+            </summary>
+            <typeparam name="T">typeparam of repository</typeparam>
+            <returns>repository by type</returns>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.Dispose(System.Boolean)">
+            <summary>
+            Defining the destructor
+            </summary>
+            <param name="disposing">disposing</param>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.Dispose">
+            <summary>
+            Defining the destructor
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.Save">
+            <summary>
+            Save changes
+            </summary>
+        </member>
+        <member name="M:DAL.Repositories.UnitOfWork.SaveAsync">
+            <summary>
+            Save changes
+            </summary>
+            <returns>saved changes</returns>
+        </member>
+    </members>
+</doc>

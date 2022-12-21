@@ -1,0 +1,63 @@
+﻿<Window x:Class="PL.ShareAccount"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        Title="ShareAccount" Height="350" Width="800" Background="#FF083846">
+    <Viewbox>
+        <Grid x:Name="ShareAccountForm" Background="#FF083846" Height="366" Width="734">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="365*"/>
+                <ColumnDefinition Width="269*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="37*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ShareAccountOKButton" Content="OK" HorizontalAlignment="Left" Margin="155,72,0,111" Height="39" Width="110" Background="#FF2FC3CB" FontSize="20" Grid.Row="1" Click="ShareAccountOKButton_Click"  >
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="ShareAccountCancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="45,72,0,0" VerticalAlignment="Top" Height="39" Width="110" Background="#FF2FC3CB" FontSize="20" Grid.Row="1" Click="ChangeEmailCancelButton_Click" Grid.Column="1">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    </Button.Resources>
+                </Button>
+                <Label x:Name="ShareAccountEmailLabel" Content="Email" HorizontalAlignment="Left" Margin="317,83,0,0" VerticalAlignment="Top" Foreground="#FF2FC3CB" Height="35" Width="122" FontSize="20" Grid.ColumnSpan="2"/>
+
+            <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="155,8,0,0" VerticalAlignment="Top" Foreground="#FFD70D0D" Visibility="Visible" RenderTransformOrigin="0.368,0.665" FontSize="20" Width="324" Grid.ColumnSpan="2"/>
+
+            <TextBox x:Name="ShareAccountEmailTextBox" Grid.ColumnSpan="2" Margin="155,0,156,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="31" FontSize="20" Background="#FF2FC3CB" Grid.Row="1" />
+
+
+        </Grid>
+    </Viewbox>
+</Window>

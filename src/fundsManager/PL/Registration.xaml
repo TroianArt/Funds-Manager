@@ -1,0 +1,72 @@
+﻿<Window x:Class="PL.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Registration" Height="450" Width="800" Background="#FF083846">
+    <Viewbox>
+        <Grid x:Name="RegistrationForm" Background="#FF083846" Height="366" Width="634">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="365*"/>
+                <ColumnDefinition Width="269*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="24*"/>
+                <RowDefinition Height="37*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="RegSignUpButton" Content="Sign Up" HorizontalAlignment="Left" Margin="212,150,0,33" Width="81" Background="#FF2FC3CB" FontSize="20" Grid.Row="1" Click="RegSignUpButton_Click" >
+
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="341,150,0,0" VerticalAlignment="Top" Height="39" Width="81" Background="#FF2FC3CB" FontSize="20" Grid.Row="1" Click="CancelButton_Click" Grid.ColumnSpan="2">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="15"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                    </Button.Resources>
+                </Button>
+                <Label x:Name="LabelEmail" Content="Email:" HorizontalAlignment="Left" Margin="140,21,0,0" VerticalAlignment="Top" Foreground="#FF2FC3CB" Height="35" Width="62" FontSize="20" Grid.Row="1"/>
+            <Label x:Name="LabelPassword" Content="Password:" HorizontalAlignment="Left" Margin="106,56,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2FC3CB" Width="96" Grid.Row="1"/>
+            <Label Content="Confirm password:" HorizontalAlignment="Left" Margin="27,97,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Foreground="#FF2FC3CB" Width="180" />
+            <PasswordBox x:Name="ConfirmPasswordTextBox" FontSize="15" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="212,102,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="210" Height="26" Background="#FF2FC3CB"/>
+            <TextBox x:Name="PhoneTextBox" FontSize="15" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="212,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="25" Background="#FF2FC3CB" Text="" Grid.RowSpan="2" />
+            <TextBox x:Name="SecondNameTextBox" FontSize="15" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="212,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="25"  Background="#FF2FC3CB" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="FirstNameTextBox" FontSize="15" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="212,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="25"  Background="#FF2FC3CB" Text=""/>
+            <Label Content="Cell phone:" HorizontalAlignment="Left" Margin="93,125,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2FC3CB" Grid.RowSpan="2"/>
+            <Label Content="Last name:" HorizontalAlignment="Left" Margin="98,87,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2FC3CB"/>
+            <Label Content="First name:" HorizontalAlignment="Left" Margin="96,49,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FF2FC3CB"/>
+            <Label x:Name="ErrorLabel" Content="" HorizontalAlignment="Left" Margin="155,8,0,0" VerticalAlignment="Top" Foreground="#FFD70D0D" Visibility="Visible" RenderTransformOrigin="0.368,0.665" FontSize="20" Width="324" Grid.ColumnSpan="2"/>
+            <PasswordBox x:Name="PasswordTextBox" FontSize="15" HorizontalAlignment="Left" Margin="212,62,0,0" Grid.Row="1"  VerticalAlignment="Top" Width="210" Height="25" Background="#FF2FC3CB" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="EmailTextBox" FontSize="15" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="212,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" Height="25" Background="#FF2FC3CB" Grid.Row="1" Text="" />
+
+
+        </Grid>
+    </Viewbox>
+</Window>
